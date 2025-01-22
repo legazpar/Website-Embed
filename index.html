@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Blog & Multimedia Site</title>
+    <link rel="stylesheet" href="styles/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@300;400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div id="loader">
+        <div class="spinner"></div>
+    </div>
+    
+    <div class="page-wrapper">
+        <header>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Landing</a></li>
+                    <li><a href="discover.html">Discover</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="search-container">
+                <button id="searchToggle" class="search-button">
+                    <img src="assets/loupe-logo.png" alt="Search" class="search-icon">
+                </button>
+                <div id="searchBar" class="search-bar hidden">
+                    <input type="text" placeholder="Search..." class="search-input">
+                </div>
+            </div>
+        </header>
+        
+        <main class="content">
+            <h1>Who's on top today?</h1>
+            <p>Discover the loudest contents</p>
+            <section class="landing-section">
+                <div class="media-layout">
+                    <div class="instagram-container">
+                        <blockquote class="instagram-media" 
+                            data-instgrm-permalink="https://www.instagram.com/p/DEVMhVcM8md/"
+                            data-instgrm-version="14" 
+                            style="background:#FFF; border:0; margin:1px; max-width:540px; min-width:326px; width:calc(100% - 2px); border-radius: 12px; box-shadow: 0 0 1px rgba(0,0,0,0.5), 0 1px 10px rgba(0,0,0,0.15);">
+                        </blockquote>
+                        <script async src="https://www.instagram.com/embed.js" referrerpolicy="strict-origin-when-cross-origin"></script>
+                    </div>
+                    <div class="youtube-container">
+                        <iframe width="560" height="315" src="https://www.youtube.com/embed/LhbpdFVJbqo?si=U6I2tT1wM_rFB3be" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+                        </iframe>
+                        <div id="streaming-links-1"></div>
+                        <iframe width="560" height="315" src="https://www.youtube.com/embed/T6b9XaggWn4?si=iPS8UnwjOvA9LI07" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+                        </iframe>
+                        <div id="streaming-links-2"></div>
+                    </div>
+                </div>
+                <div class="spotify-container">
+                    <iframe style="border-radius:12px" src="https://open.spotify.com/embed/album/6FnC2WpKS9rGuBDYqUdP6P?utm_source=generator&theme=0" width="100%" height="152" frameborder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+                </div>
+            </section>
+        </main>
+        <footer class="footer">
+            <p>&copy; 2025 My Blog</p>
+            <button id="darkModeToggle" style="margin: 20px; padding: 10px;">Toggle Dark Mode</button>
+        </footer>
+    </div>
+    <script src="scripts/main.js"></script>
+</body>
+</html>
