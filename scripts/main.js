@@ -83,3 +83,73 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 });
+
+
+document.addEventListener("DOMContentLoaded", () => {
+    const cells = document.querySelectorAll("[data-cell]");
+    const statusText = document.getElementById("game-status");
+    const restartBtn = document.getElementById("restart-btn");
+
+    let isXTurn = true;
+    let gameActive = true;
+
+    const winningCombinations = [
+        [0, 1, 2],
+        [3, 4, 5],
+        [6, 7, 8],
+        [0, 3, 6],
+        [1, 4, 7],
+        [2, 5, 8],
+        [0, 4, 8],
+        [2, 4, 6],
+    ];
+
+    const checkWin = (currentClass) => {
+        return winningCombinations.some(combination => {
+            return combination.every(index => {
+                return cells[index].classList.contains(currentClass);
+            });
+        });
+    };
+
+    const checkDraw = () => {
+        return [...cells].every(cell => {
+            return cell.classList.contains("x") || cell.classList.contains("o");
+        });
+    };
+
+    const handleClick = (e) => {
+        const cell = e.target;
+        const currentClass = isXTurn ? "x" : "o";
+
+        cell.classList.add(currentClass);
+        cell.textContent = currentClass.toUpperCase();
+
+        if (checkWin(currentClass)) {
+            statusText.textContent = `${currentClass.toUpperCase()} Wins! 🎉`;
+            gameActive = false;
+        } else if (checkDraw()) {
+            statusText.textContent = "It's a Draw! 🤝";
+            gameActive = false;
+        } else {
+            isXTurn = !isXTurn;
+            statusText.textContent = `Turn: ${isXTurn ? "X" : "O"}`;
+        }
+    };
+
+    const startGame = () => {
+        isXTurn = true;
+        gameActive = true;
+        statusText.textContent = "Turn: X";
+
+        cells.forEach(cell => {
+            cell.classList.remove("x", "o");
+            cell.textContent = "";
+            cell.addEventListener("click", handleClick, { once: true });
+        });
+    };
+
+    restartBtn.addEventListener("click", startGame);
+
+    startGame();
+});

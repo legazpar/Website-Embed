@@ -428,3 +428,62 @@ body.dark-mode footer p a:hover {
     height: 100%;
     border: 0;
 }
+
+
+/* Tic-Tac-Toe Styles */
+.game-section {
+    margin: 2rem auto;
+    text-align: center;
+}
+
+.game-board {
+    display: grid;
+    grid-template-columns: repeat(3, 100px);
+    grid-template-rows: repeat(3, 100px);
+    gap: 5px;
+    justify-content: center;
+    margin: 1rem auto;
+}
+
+.cell {
+    width: 100px;
+    height: 100px;
+    background-color: #f0f0f0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+    font-weight: bold;
+    cursor: pointer;
+    border: 2px solid #333;
+    box-sizing: border-box;
+}
+
+.cell:hover {
+    background-color: #dcdcdc;
+}
+
+.cell.taken {
+    pointer-events: none;
+    color: #555;
+}
+
+#game-status {
+    margin: 1rem 0;
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+#restart-btn {
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+#restart-btn:hover {
+    background-color: #0056b3;
+}

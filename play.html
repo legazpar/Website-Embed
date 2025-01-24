@@ -34,20 +34,24 @@
             <h1>Explore and Play Games</h1>
             <div class="game-list">
                 <!-- Example game with fallback link -->
-                <div class="game">
-                    <h2>Tic Tac Toe</h2>
-                    <p>This game cannot be embedded. <a href="https://playtictactoe.org/" target="_blank">Play Tic Tac Toe</a></p>
-                </div>
+                <section id="tic-tac-toe-game" class="game-section">
+                    <h2>Tic-Tac-Toe</h2>
+                    <div class="game-board">
+                        <!-- The grid for Tic-Tac-Toe -->
+                        <div class="cell" data-cell></div>
+                        <div class="cell" data-cell></div>
+                        <div class="cell" data-cell></div>
+                        <div class="cell" data-cell></div>
+                        <div class="cell" data-cell></div>
+                        <div class="cell" data-cell></div>
+                        <div class="cell" data-cell></div>
+                        <div class="cell" data-cell></div>
+                        <div class="cell" data-cell></div>
+                    </div>
+                    <p id="game-status"></p>
+                    <button id="restart-btn">Restart</button>
+                </section>
                 
-                <div class="game">
-                    <h2>Snake Game</h2>
-                    <iframe src="https://playsnake.org/" title="Snake Game" frameborder="0"></iframe>
-                </div>
-        
-                <div class="game">
-                    <h2>Puzzle Game</h2>
-                    <iframe src="https://15puzzle.net/" title="Puzzle Game" frameborder="0"></iframe>
-                </div>
             </div>
         </main>
         
