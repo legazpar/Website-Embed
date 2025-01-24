@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Blog & Multimedia Site</title>
+    <link rel="stylesheet" href="styles/styles.css">
+</head>
+
+<body>
+    <div id="loader">
+        <div class="spinner"></div>
+    </div>
+
+        <header>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Landing</a></li>
+                    <li><a href="play.html">Play</a></li> <!-- photo/video/music only --> 
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="search-container">
+                <button id="searchToggle" class="search-button">
+                    <img src="assets/loupe-logo.png" alt="Search" class="search-icon">
+                </button>
+                <div id="searchBar" class="search-bar hidden">
+                    <input type="text" placeholder="Search..." class="search-input">
+                </div>
+            </div>
+        </header>
+
+        <main class="content">
+            <h1>Explore and Play Games</h1>
+            <div class="game-list">
+                <!-- Example game with fallback link -->
+                <div class="game">
+                    <h2>Tic Tac Toe</h2>
+                    <p>This game cannot be embedded. <a href="https://playtictactoe.org/" target="_blank">Play Tic Tac Toe</a></p>
+                </div>
+                
+                <div class="game">
+                    <h2>Snake Game</h2>
+                    <iframe src="https://playsnake.org/" title="Snake Game" frameborder="0"></iframe>
+                </div>
+        
+                <div class="game">
+                    <h2>Puzzle Game</h2>
+                    <iframe src="https://15puzzle.net/" title="Puzzle Game" frameborder="0"></iframe>
+                </div>
+            </div>
+        </main>
+        
+
+        <footer class="footer">
+                        <p>&copy; 2025 My Blog</p>
+                        <button id="darkModeToggle" style="margin: 20px; padding: 10px;">Toggle Dark Mode</button>
+        </footer>
+    </div>
+
+    <script src="scripts/main.js"></script>
+</body>
+</html>
