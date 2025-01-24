@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Blog & Multimedia Site</title>
     <link rel="stylesheet" href="styles/styles.css">
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css" integrity="sha256-sA+qarw6TVrC0GObOmoYwQpAo9gKfv5M3bUJ93G2GzU=" crossorigin=""/>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css" />
 
 </head>
 <body>
@@ -57,9 +57,21 @@
                         <img src="assets/mail-logo.png" alt="Mail" class="streaming-logo">
                     </a>
                 </div>
+
+                <div class="map-container"> 
+                    <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d89076.9937598945!2d4.752728999012208!3d45.75804085537638!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47f4ea516ae88797%3A0x408ab2ae4bb21f0!2sLyon!5e0!3m2!1sen!2sfr!4v1737708316045!5m2!1sen!2sfr"                        width="600" 
+                        height="450" 
+                        style="border:0;" 
+                        allowfullscreen="" 
+                        loading="lazy" 
+                        referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>   
+                   
+                </div>
+                
             </div>
         </section>
-        <div id="map" style="height: 500px; width: 100%;"></div>
 
         
     </main>
@@ -67,9 +79,9 @@
         <p>&copy; 2025 My Blog</p>
         <button id="darkModeToggle" style="margin: 20px; padding: 10px;">Toggle Dark Mode</button>
     </footer>
+    <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"></script>
     <script src="scripts/main.js"></script>
-    <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js" integrity="sha256-nndB1D0J7iIgr4xP4kI5f8KQoeWw3p2LN93p6x9RRJI=" crossorigin=""></script>
-
+    
 
 </body>
 </html>

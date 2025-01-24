@@ -1,3 +1,4 @@
+// Fetch video details
 async function fetchVideoDetails(videoId, placeholderId) {
     const apiKey = 'AIzaSyB81Ko-flaP1lJfNQEzy-DoEfgl0dNrnAk'; // Replace with your valid API key
     const url = `https://www.googleapis.com/youtube/v3/videos?part=snippet&id=${videoId}&key=${apiKey}`;
@@ -8,7 +9,6 @@ async function fetchVideoDetails(videoId, placeholderId) {
 
         if (data.items && data.items.length > 0) {
             const title = data.items[0].snippet.title;
-            
 
             // Generate streaming links
             const spotifyLink = `https://open.spotify.com/search/${encodeURIComponent(title)}`;
@@ -43,9 +43,7 @@ async function fetchVideoDetails(videoId, placeholderId) {
     }
 }
 
-
-
-// Fetch details for both YouTube videos
+// Fetch details for YouTube videos
 document.addEventListener('DOMContentLoaded', () => {
     fetchVideoDetails('LhbpdFVJbqo', 'streaming-links-1'); // First video
     fetchVideoDetails('sono4_sSB_8', 'streaming-links-2'); // Second video
@@ -57,18 +55,16 @@ window.addEventListener('load', () => {
     loader.style.opacity = 0;
     setTimeout(() => {
         loader.style.display = 'none';
-    }, 500); // Give time for fade-out effect
+    }, 500); // Fade-out effect
 });
 
-
-// Check if dark mode is enabled on page load
+// Dark mode toggle
 document.addEventListener('DOMContentLoaded', () => {
     const toggleButton = document.getElementById('darkModeToggle');
     const isDarkMode = localStorage.getItem('darkMode') === 'enabled';
     if (isDarkMode) {
         document.body.classList.add('dark-mode');
     }
-    // Toggle dark mode and save state
     toggleButton.addEventListener('click', () => {
         document.body.classList.toggle('dark-mode');
         const darkModeEnabled = document.body.classList.contains('dark-mode');
@@ -76,8 +72,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 
-
-// Search bar functionality
+// Search bar toggle
 document.addEventListener('DOMContentLoaded', () => {
     const searchToggle = document.getElementById('searchToggle');
     const searchBar = document.getElementById('searchBar');
@@ -88,18 +83,3 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 });
-
-
-
-// Initialize the map and set its view to the desired geographical coordinates and zoom level
-const map = L.map('map').setView([51.505, -0.09], 13); // Example coordinates (latitude, longitude)
-
-// Add OpenStreetMap tiles
-L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-    maxZoom: 19,
-    attribution: '© OpenStreetMap contributors'
-}).addTo(map);
-
-// Add a marker at the specified coordinates
-const marker = L.marker([51.505, -0.09]).addTo(map);
-marker.bindPopup("<b>Hello!</b><br>This is a sample marker.").openPopup();

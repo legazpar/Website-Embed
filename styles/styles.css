@@ -393,8 +393,38 @@ body.dark-mode footer p a:hover {
         flex-direction: column;
         align-items: center;
     }
-
-    .contact-layout .buttons-container {
-        align-items: center;
+    .contact-layout #map {
+        width: 100%;
     }
+}
+
+.contact-layout {
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch; /* Ensures all children have the same height */
+    gap: 20px;
+    margin: 25px;
+}
+
+.contact-layout .form-container {
+    flex: 2; /* Adjust to control the width of the form */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Ensures the form takes the full height */
+}
+
+.contact-layout .map-container {
+    flex: 2; /* Same as the form container */
+    height: auto; /* Automatically adjust to match the form */
+    border: 1px solid var(--secondary-color); /* Optional for visual separation */
+    border-radius: 10px;
+    overflow: hidden; /* Prevent iframe from spilling out */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Optional for aesthetics */
+    display: flex; /* Ensures iframe takes full height */
+}
+
+.map-container iframe {
+    width: 100%;
+    height: 100%;
+    border: 0;
 }
